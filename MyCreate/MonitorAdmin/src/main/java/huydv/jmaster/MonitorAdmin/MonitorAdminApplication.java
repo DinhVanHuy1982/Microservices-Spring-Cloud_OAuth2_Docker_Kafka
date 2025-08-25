@@ -1,15 +1,13 @@
-package huydv.jmaster.GatewayService;
+package huydv.jmaster.MonitorAdmin;
 
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import io.micrometer.common.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.gateway.route.RouteLocator;
-import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 
 import java.net.InetAddress;
@@ -17,11 +15,13 @@ import java.net.UnknownHostException;
 import java.util.Optional;
 
 @SpringBootApplication
+@EnableAdminServer
 @EnableDiscoveryClient
-public class GatewayServiceApplication {
-	private static final Logger log = LoggerFactory.getLogger(GatewayServiceApplication.class);
+public class MonitorAdminApplication {
+	private static final Logger log = LoggerFactory.getLogger(MonitorAdminApplication.class);
+
 	public static void main(String[] args) {
-		ConfigurableApplicationContext configurableApplicationContext = SpringApplication.run(GatewayServiceApplication.class, args);
+		ConfigurableApplicationContext configurableApplicationContext =  SpringApplication.run(MonitorAdminApplication.class, args);
 		Environment env = configurableApplicationContext.getEnvironment();
 		logApplicationStartup(env);
 	}
@@ -54,30 +54,5 @@ public class GatewayServiceApplication {
 				contextPath,
 				env.getActiveProfiles()
 		);
-	}
-
-	@Bean
-	public RouteLocator customRoutesLocator(RouteLocatorBuilder builder, LoggingGatewayFilterFactory loggingFactory) {
-		return builder.routes()
-				.route("user-route", r -> r.path("/user/**")
-						.filters(f->f.stripPrefix(1)
-								.filter(loggingFactory.apply(new LoggingGatewayFilterFactory.Config()))
-								.circuitBreaker(c -> c.setName("CircuitBreaker").getFallbackUri()))
-						.uri("lb://account-service")
-				)
-				.route("report-route", r -> r.path("/report/**")
-						.filters(f->f.stripPrefix(1))
-						.uri("lb://statistic-service")
-				)
-				.route("notification-route", r -> r.path("/notification/**")
-						.filters(f->f.stripPrefix(1))
-						.uri("lb://notification-service")
-				)
-				// swagger ui
-				.route("openapi", r -> r.path("/v3/api-docs/**")
-						.filters(f->f.rewritePath("/v3/api-docs/(?<service>.*)", "/${service}/v3/api-docs"))
-						.uri("lb://gateway-service")
-				)
-				.build();
 	}
 }

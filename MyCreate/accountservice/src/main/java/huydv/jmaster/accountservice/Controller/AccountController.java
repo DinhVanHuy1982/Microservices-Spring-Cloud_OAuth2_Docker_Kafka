@@ -44,6 +44,7 @@ public class AccountController {
 
     @GetMapping("/accounts")
     public List<AccountDTO> getAllAccounts() {
+        logger.info("Get All Accounts...");
         return accountService.getAll();
     }
 

@@ -1,0 +1,43 @@
+package huydv.jmaster.GatewayService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cloud.gateway.filter.GatewayFilter;
+import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
+import org.springframework.stereotype.Component;
+import reactor.core.publisher.Mono;
+
+@Component("Logging")
+public class LoggingGatewayFilterFactory extends AbstractGatewayFilterFactory<LoggingGatewayFilterFactory.Config> {
+    final Logger logger = LoggerFactory.getLogger(getClass());
+
+    public LoggingGatewayFilterFactory() {
+        super(Config.class);
+    }
+
+    @Override
+    public GatewayFilter apply(Config config) {
+        return (exchange, chain) -> {
+          // Pre-processing
+          logger.info("Pre GatewayFilter logging: ");
+          return chain.filter(exchange)
+                  .then(Mono.fromRunnable(() -> {
+                      // Post-processing
+                      logger.info("Post GatewayFilter logging: ");
+                  }));
+        };
+    }
+
+    public static class Config{
+        // put the configuration properties for your filter here
+        private String baseMsg;
+
+        public void setBaseMsg(String baseMsg) {
+            this.baseMsg = baseMsg;
+        }
+
+        public String getBaseMsg() {
+            return baseMsg;
+        }
+    }
+}
