@@ -6,17 +6,17 @@ import huydv.jmaster.accountservice.Model.AccountDTO;
 import huydv.jmaster.accountservice.Model.MessageDTO;
 import huydv.jmaster.accountservice.Model.StatisticDTO;
 import huydv.jmaster.accountservice.Service.AccountService;
+import jakarta.annotation.security.PermitAll;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 //@RequestMapping()
@@ -30,9 +30,30 @@ public class AccountController {
     @Autowired
     private NotificationService notificationService;
 
+    @PostMapping("/register")
+    @PermitAll
+    public AccountDTO registerAccount(@RequestBody AccountDTO accountDTO, @RequestHeader("Authorization") String bearerToken) {
+        logger.info("Registering account {}", accountDTO);
+        accountDTO.setRoles(new HashSet<>(Arrays.asList("ROLES_USER")));
+        accountService.add(accountDTO);
+
+        // send message
+        MessageDTO messageDTO = new MessageDTO();
+        messageDTO.setFrom("dinhvanhuy1908202@gmail.com");
+        messageDTO.setTo(accountDTO.getEmail());
+        messageDTO.setToName(accountDTO.getName());
+        messageDTO.setSubject("Welcome to my website");
+        messageDTO.setContent("My website has been registered");
+
+        notificationService.sendNotification(messageDTO);
+
+        return accountDTO;
+    }
+
+    @PreAuthorize("hasAuthority('ROLE_ADMIN') && hasRole('ADMIN')")
     @PostMapping("/account")
     @Transactional
-    public AccountDTO createAccount(@RequestBody AccountDTO accountDTO) {
+    public AccountDTO createAccount(@RequestBody AccountDTO accountDTO, @RequestHeader("Authorization") String token) {
         logger.info("Create Account...");
         accountService.add(accountDTO);
         Date date = new Date();
@@ -42,9 +63,11 @@ public class AccountController {
         return accountDTO;
     }
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/accounts")
     public List<AccountDTO> getAllAccounts() {
         logger.info("Get All Accounts...");
+        statisticService.addStatistic(new StatisticDTO("Call from account\nGet infor all account", new Date()));
         return accountService.getAll();
     }
 

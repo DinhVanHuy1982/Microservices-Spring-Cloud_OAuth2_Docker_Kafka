@@ -1,0 +1,142 @@
+2025-08-26T15:44:43.975+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]h.j.D.DiscoveryServiceApplication        : Starting DiscoveryServiceApplication using Java 23.0.2 with PID 73658 (/Users/dinhvanhuy/Course/Git/Microservices-Spring-Cloud_OAuth2_Docker_Kafka/MyCreate/DiscoveryService/target/classes started by dinhvanhuy in /Users/dinhvanhuy/Course/Git/Microservices-Spring-Cloud_OAuth2_Docker_Kafka/MyCreate/DiscoveryService)
+2025-08-26T15:44:43.977+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]h.j.D.DiscoveryServiceApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-08-26T15:44:43.979+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9088
+2025-08-26T15:44:43.979+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=discovery-service, profiles=[default], label=null, version=null, state=null
+2025-08-26T15:44:44.130+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.cloud.context.scope.GenericScope     : BeanFactory id=97199747-6fbe-3d76-89c1-99256bc3b620
+2025-08-26T15:44:44.162+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9099 (http)
+2025-08-26T15:44:44.162+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-26T15:44:44.163+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-26T15:44:44.171+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-26T15:44:44.171+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 192 ms
+2025-08-26T15:44:44.267+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2025-08-26T15:44:44.267+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2025-08-26T15:44:44.267+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2025-08-26T15:44:44.267+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2025-08-26T15:44:44.293+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-26T15:44:44.374+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-26T15:44:44.382+07:00  WARN 73658 --- [discovery-service] [restartedMain] [discovery-service,,]iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-08-26T15:44:44.384+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-08-26T15:44:44.384+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-08-26T15:44:44.384+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2025-08-26T15:44:44.384+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756197884384 with initial instances count: 0
+2025-08-26T15:44:44.385+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2025-08-26T15:44:44.385+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:9099/eureka/]
+2025-08-26T15:44:44.394+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2025-08-26T15:44:44.394+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2025-08-26T15:44:44.394+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2025-08-26T15:44:44.394+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2025-08-26T15:44:44.397+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:9099/eureka/
+2025-08-26T15:44:44.397+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2025-08-26T15:44:44.397+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Initialized
+2025-08-26T15:44:44.399+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
+2025-08-26T15:44:44.416+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DISCOVERY-SERVICE with eureka with status UP
+2025-08-26T15:44:44.416+07:00  INFO 73658 --- [discovery-service] [Thread-28] [discovery-service,,]o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2025-08-26T15:44:44.416+07:00  INFO 73658 --- [discovery-service] [Thread-28] [discovery-service,,]o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2025-08-26T15:44:44.417+07:00  INFO 73658 --- [discovery-service] [Thread-28] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2025-08-26T15:44:44.417+07:00  INFO 73658 --- [discovery-service] [Thread-28] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2025-08-26T15:44:44.417+07:00  INFO 73658 --- [discovery-service] [Thread-28] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2025-08-26T15:44:44.417+07:00  INFO 73658 --- [discovery-service] [Thread-28] [discovery-service,,]e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2025-08-26T15:44:44.417+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9099 (http) with context path '/'
+2025-08-26T15:44:44.417+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,].s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9099
+2025-08-26T15:44:44.423+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]h.j.D.DiscoveryServiceApplication        : Started DiscoveryServiceApplication in 0.518 seconds (process running for 71174.563)
+2025-08-26T15:44:44.424+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,].ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   InfoContributorAutoConfiguration#envInfoContributor matched:
+      - @ConditionalOnEnabledInfoContributor management.info.env.enabled is true (OnEnabledInfoContributorCondition)
+
+   LogFileWebEndpointAutoConfiguration#logFileWebEndpoint matched:
+      - Log File found logging.file.name myapp.log (LogFileWebEndpointAutoConfiguration.LogFileCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.logging.LogFileWebEndpoint; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-08-26T15:44:44.425+07:00  INFO 73658 --- [discovery-service] [restartedMain] [discovery-service,,]h.j.D.DiscoveryServiceApplication        : 
+----------------------------------------------------------
+	Application 'discovery-service' is running! Access URLs:
+	Local: 		http://localhost:9099/
+	External: 	http://127.0.0.1:9099/
+	Profile(s): 	[]
+----------------------------------------------------------
+2025-08-26T15:45:00.593+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-2] [discovery-service,,]o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-26T15:45:00.594+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-2] [discovery-service,,]o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-26T15:45:00.597+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-2] [discovery-service,,]o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-08-26T15:45:00.607+07:00  WARN 73658 --- [discovery-service] [http-nio-9099-exec-1] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: NOTIFICATION-SERVICE - 192.168.0.137:notification-service:9083
+2025-08-26T15:45:00.608+07:00  WARN 73658 --- [discovery-service] [http-nio-9099-exec-1] [discovery-service,,]c.n.eureka.resources.InstanceResource    : Not Found (Renew): NOTIFICATION-SERVICE - 192.168.0.137:notification-service:9083
+2025-08-26T15:45:00.622+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-4] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATION-SERVICE/192.168.0.137:notification-service:9083 with status UP (replication=false)
+2025-08-26T15:45:01.152+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-5] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATION-SERVICE/192.168.0.137:notification-service:9083 with status UP (replication=true)
+2025-08-26T15:45:02.081+07:00  WARN 73658 --- [discovery-service] [http-nio-9099-exec-7] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: ACCOUNT-SERVICE - 172.16.113.28:account-service:9081
+2025-08-26T15:45:02.081+07:00  WARN 73658 --- [discovery-service] [http-nio-9099-exec-7] [discovery-service,,]c.n.eureka.resources.InstanceResource    : Not Found (Renew): ACCOUNT-SERVICE - 172.16.113.28:account-service:9081
+2025-08-26T15:45:02.092+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-9] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance ACCOUNT-SERVICE/172.16.113.28:account-service:9081 with status UP (replication=false)
+2025-08-26T15:45:02.596+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-10] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance ACCOUNT-SERVICE/172.16.113.28:account-service:9081 with status UP (replication=true)
+2025-08-26T15:45:13.344+07:00  WARN 73658 --- [discovery-service] [http-nio-9099-exec-2] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: AUTH-SERVICE - 172.16.113.28:auth-service:9008
+2025-08-26T15:45:13.344+07:00  WARN 73658 --- [discovery-service] [http-nio-9099-exec-2] [discovery-service,,]c.n.eureka.resources.InstanceResource    : Not Found (Renew): AUTH-SERVICE - 172.16.113.28:auth-service:9008
+2025-08-26T15:45:13.353+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-3] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/172.16.113.28:auth-service:9008 with status UP (replication=false)
+2025-08-26T15:45:13.860+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-5] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/172.16.113.28:auth-service:9008 with status UP (replication=true)
+2025-08-26T15:45:16.538+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-6] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance ACCOUNT-SERVICE/172.16.113.28:account-service:9081 with status DOWN (replication=false)
+2025-08-26T15:45:16.538+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-7] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/172.16.113.28:auth-service:9008 with status DOWN (replication=false)
+2025-08-26T15:45:17.046+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-8] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance ACCOUNT-SERVICE/172.16.113.28:account-service:9081 with status DOWN (replication=true)
+2025-08-26T15:45:17.047+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-8] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance AUTH-SERVICE/172.16.113.28:auth-service:9008 with status DOWN (replication=true)
+2025-08-26T15:45:19.570+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-9] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance AUTH-SERVICE/172.16.113.28:auth-service:9008 (replication=false)
+2025-08-26T15:45:19.619+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-10] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ACCOUNT-SERVICE/172.16.113.28:account-service:9081 (replication=false)
+2025-08-26T15:45:20.081+07:00  WARN 73658 --- [discovery-service] [http-nio-9099-exec-5] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: AUTH-SERVICE/172.16.113.28:auth-service:9008
+2025-08-26T15:45:20.082+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-5] [discovery-service,,]c.n.eureka.resources.InstanceResource    : Not Found (Cancel): AUTH-SERVICE - 172.16.113.28:auth-service:9008
+2025-08-26T15:45:20.082+07:00  WARN 73658 --- [discovery-service] [http-nio-9099-exec-5] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: ACCOUNT-SERVICE/172.16.113.28:account-service:9081
+2025-08-26T15:45:20.082+07:00  INFO 73658 --- [discovery-service] [http-nio-9099-exec-5] [discovery-service,,]c.n.eureka.resources.InstanceResource    : Not Found (Cancel): ACCOUNT-SERVICE - 172.16.113.28:account-service:9081
+2025-08-26T15:45:20.083+07:00  WARN 73658 --- [discovery-service] [TaskBatchingWorker-target_localhost-12] [discovery-service,,]c.n.eureka.cluster.ReplicationTask       : The replication of task AUTH-SERVICE/172.16.113.28:auth-service:9008:Cancel@localhost failed with response code 404
+2025-08-26T15:45:20.083+07:00  WARN 73658 --- [discovery-service] [TaskBatchingWorker-target_localhost-12] [discovery-service,,]c.netflix.eureka.cluster.PeerEurekaNode  : AUTH-SERVICE/172.16.113.28:auth-service:9008:Cancel@localhost: missing entry.
+2025-08-26T15:45:20.083+07:00  WARN 73658 --- [discovery-service] [TaskBatchingWorker-target_localhost-12] [discovery-service,,]c.n.eureka.cluster.ReplicationTask       : The replication of task ACCOUNT-SERVICE/172.16.113.28:account-service:9081:Cancel@localhost failed with response code 404
+2025-08-26T15:45:20.083+07:00  WARN 73658 --- [discovery-service] [TaskBatchingWorker-target_localhost-12] [discovery-service,,]c.netflix.eureka.cluster.PeerEurekaNode  : ACCOUNT-SERVICE/172.16.113.28:account-service:9081:Cancel@localhost: missing entry.
+2025-08-26T15:45:44.421+07:00  INFO 73658 --- [discovery-service] [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-08-26T15:46:37.766+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DISCOVERY-SERVICE with eureka with status DOWN
+2025-08-26T15:46:37.769+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-26T15:46:37.774+07:00  INFO 73658 --- [discovery-service] [tomcat-shutdown] [discovery-service,,]o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-26T15:46:37.777+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2025-08-26T15:46:37.777+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2025-08-26T15:46:37.779+07:00 ERROR 73658 --- [discovery-service] [Eureka-Jersey3Client-Conn-Cleaner2] [discovery-service,,]c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
+
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.10.jar:na]
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:338) ~[eureka-client-jersey3-2.0.5.jar:2.0.5]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-08-26T15:46:37.782+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shut down
+2025-08-26T15:46:37.782+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2025-08-26T15:46:37.783+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2025-08-26T15:46:37.784+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shut down
+2025-08-26T15:46:37.792+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-08-26T15:46:37.792+07:00  INFO 73658 --- [discovery-service] [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

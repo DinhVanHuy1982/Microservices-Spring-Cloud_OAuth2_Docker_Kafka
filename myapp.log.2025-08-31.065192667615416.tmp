@@ -1,0 +1,3 @@
+2025-09-01T00:15:57.481+07:00  WARN 28503 --- [auth-service] [HikariPool-1 housekeeper] [auth-service,,]com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=42m2s273ms).
+2025-09-01T00:51:44.205+07:00  WARN 28503 --- [auth-service] [HikariPool-1 housekeeper] [auth-service,,]com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m46s725ms).
+2025-09-01T01:08:35.849+07:00  WARN 28503 --- [auth-service] [HikariPool-1 housekeeper] [auth-service,,]com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m51s644ms).

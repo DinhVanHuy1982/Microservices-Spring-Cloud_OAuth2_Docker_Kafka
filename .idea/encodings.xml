@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/MyCreate/AuthService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyCreate/ClientRegisterService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyCreate/ConfigServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyCreate/DiscoveryService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyCreate/GatewayService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyCreate/MonitorAdmin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyCreate/NotificationService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyCreate/accountservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyCreate/statisticService/src/main/java" charset="UTF-8" />
+  </component>
+</project>

@@ -12,6 +12,6 @@ public class StatisticServiceImpl implements StatisticService {
     @Override
     public void addStatistic(StatisticDTO statisticDTO) {
         // fall back
-        logger.error("addStatistic is Slow");
+        logger.error("addStatistic is error or Slow");
     }
 }

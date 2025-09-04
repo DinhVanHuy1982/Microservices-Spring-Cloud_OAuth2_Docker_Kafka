@@ -1,0 +1,61 @@
+2025-08-25T16:57:55.092+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]h.j.N.NotificationServiceApplication     : Starting NotificationServiceApplication using Java 23.0.2 with PID 91561 (/Users/dinhvanhuy/Course/Git/Microservices-Spring-Cloud_OAuth2_Docker_Kafka/MyCreate/NotificationService/target/classes started by dinhvanhuy in /Users/dinhvanhuy/Course/Git/Microservices-Spring-Cloud_OAuth2_Docker_Kafka/MyCreate/NotificationService)
+2025-08-25T16:57:55.093+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]h.j.N.NotificationServiceApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-08-25T16:57:55.107+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:9088
+2025-08-25T16:57:55.107+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=notification-service, profiles=[default], label=null, version=null, state=null
+2025-08-25T16:57:55.108+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,].e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-25T16:57:55.108+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,].e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-25T16:57:55.457+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.cloud.context.scope.GenericScope     : BeanFactory id=ce5ab0c3-06ce-32cb-ad36-d856888c1f05
+2025-08-25T16:57:55.584+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9083 (http)
+2025-08-25T16:57:55.589+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-25T16:57:55.589+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-25T16:57:55.604+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-25T16:57:55.604+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 496 ms
+2025-08-25T16:57:55.771+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-25T16:57:55.990+07:00  WARN 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-08-25T16:57:55.998+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-08-25T16:57:56.012+07:00  WARN 91561 --- [notification-service] [restartedMain] [notification-service,,]iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-08-25T16:57:56.015+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
+2025-08-25T16:57:56.054+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-08-25T16:57:56.066+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-08-25T16:57:56.068+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-08-25T16:57:56.072+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-08-25T16:57:56.072+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-08-25T16:57:56.073+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-08-25T16:57:56.073+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-08-25T16:57:56.073+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-08-25T16:57:56.073+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-08-25T16:57:56.073+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-08-25T16:57:56.178+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-08-25T16:57:56.179+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-08-25T16:57:56.180+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-08-25T16:57:56.180+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1756115876180 with initial instances count: 4
+2025-08-25T16:57:56.182+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.c.n.e.s.EurekaServiceRegistry        : Registering application NOTIFICATION-SERVICE with eureka with status UP
+2025-08-25T16:57:56.182+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756115876182, current=UP, previous=STARTING]
+2025-08-25T16:57:56.183+07:00  INFO 91561 --- [notification-service] [DiscoveryClient-InstanceInfoReplicator-%d] [notification-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATION-SERVICE/172.16.113.28:notification-service:9083: registering service...
+2025-08-25T16:57:56.185+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application NOTIFICATION-SERVICE with eureka with status DOWN
+2025-08-25T16:57:56.185+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756115876185, current=DOWN, previous=UP]
+2025-08-25T16:57:56.185+07:00  WARN 91561 --- [notification-service] [restartedMain] [notification-service,,]ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-08-25T16:57:56.188+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-08-25T16:57:56.197+07:00  INFO 91561 --- [notification-service] [DiscoveryClient-InstanceInfoReplicator-%d] [notification-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATION-SERVICE/172.16.113.28:notification-service:9083 - registration status: 204
+2025-08-25T16:57:56.197+07:00  INFO 91561 --- [notification-service] [DiscoveryClient-InstanceInfoReplicator-%d] [notification-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATION-SERVICE/172.16.113.28:notification-service:9083: registering service...
+2025-08-25T16:57:56.200+07:00  INFO 91561 --- [notification-service] [DiscoveryClient-InstanceInfoReplicator-%d] [notification-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATION-SERVICE/172.16.113.28:notification-service:9083 - registration status: 204
+2025-08-25T16:57:56.200+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-08-25T16:57:56.205+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATION-SERVICE/172.16.113.28:notification-service:9083 - deregister  status: 200
+2025-08-25T16:57:56.206+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,]com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-08-25T16:57:56.219+07:00  INFO 91561 --- [notification-service] [restartedMain] [notification-service,,].s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-08-25T16:57:56.226+07:00 ERROR 91561 --- [notification-service] [restartedMain] [notification-service,,]o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9083 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9083 or configure this application to listen on another port.
+

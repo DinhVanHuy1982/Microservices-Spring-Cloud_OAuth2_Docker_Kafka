@@ -6,6 +6,7 @@ import huydv.jmaster.accountservice.Repository.AccountRepository;
 import huydv.jmaster.accountservice.Service.AccountService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,12 +26,14 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void add(AccountDTO accountDTO) {
         Account account = modelMapper.map(accountDTO, Account.class);
+        account.setPassword(new BCryptPasswordEncoder().encode(account.getPassword()));
         accountRepository.save(account);
     }
 
     @Override
     public void update(AccountDTO accountDTO) {
         Account account = accountRepository.getById(accountDTO.getId());
+        account.setPassword(new BCryptPasswordEncoder().encode(account.getPassword()));
         if( account != null){
             modelMapper.typeMap(AccountDTO.class, Account.class)
                     .addMappings(mapper -> mapper.skip(Account::setPassword)).map(accountDTO, account);

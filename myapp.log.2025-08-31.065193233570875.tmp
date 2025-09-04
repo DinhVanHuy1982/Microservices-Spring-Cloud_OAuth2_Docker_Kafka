@@ -1,0 +1,1 @@
+2025-09-01T00:15:59.348+07:00  INFO 26475 --- [notification-service] [AsyncResolver-bootstrap-executor-%d] [notification-service,,]c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

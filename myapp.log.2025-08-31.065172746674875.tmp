@@ -1,0 +1,384 @@
+2025-09-01T00:05:40.525+07:00  WARN 28508 --- [account-service] [HikariPool-1 housekeeper] [account-service,,]com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h34m8s873ms).
+2025-09-01T00:05:40.525+07:00  INFO 26453 --- [monitor-admin] [AsyncResolver-bootstrap-executor-%d] [monitor-admin,,]c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-09-01T00:05:43.921+07:00  INFO 28508 --- [account-service] [DiscoveryClient-HeartbeatExecutor-%d] [account-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ACCOUNT-SERVICE/172.16.113.28:account-service:9081 - Re-registering apps/ACCOUNT-SERVICE
+2025-09-01T00:05:43.922+07:00  INFO 28508 --- [account-service] [DiscoveryClient-HeartbeatExecutor-%d] [account-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ACCOUNT-SERVICE/172.16.113.28:account-service:9081: registering service...
+2025-09-01T00:05:43.926+07:00  INFO 28508 --- [account-service] [DiscoveryClient-HeartbeatExecutor-%d] [account-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ACCOUNT-SERVICE/172.16.113.28:account-service:9081 - registration status: 204
+2025-09-01T00:05:50.783+07:00  WARN 26453 --- [monitor-admin] [parallel-2] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=f2830481f89a, version=2, registration=Registration(name=AUTH-SERVICE, managementUrl=http://172.16.113.28:9008/actuator, healthUrl=http://172.16.113.28:9008/actuator/health, serviceUrl=http://172.16.113.28:9008, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T04:22:11.321833Z, info=Info(values={}), endpoints=Endpoints(endpoints={caches=Endpoint(id=caches, url=http://172.16.113.28:9008/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:9008/actuator/loggers), logfile=Endpoint(id=logfile, url=http://172.16.113.28:9008/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:9008/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:9008/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:9008/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:9008/actuator/serviceregistry), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:9008/actuator/heapdump), features=Endpoint(id=features, url=http://172.16.113.28:9008/actuator/features), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:9008/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:9008/actuator/mappings), beans=Endpoint(id=beans, url=http://172.16.113.28:9008/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:9008/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:9008/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:9008/actuator/sbom), metrics=Endpoint(id=metrics, url=http://172.16.113.28:9008/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:9008/actuator/conditions), info=Endpoint(id=info, url=http://172.16.113.28:9008/actuator/info)}), buildVersion=null, tags=Tags(values={}))
+
+java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 10000ms in 'peek' (and no fallback has been configured)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:281) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:420) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.propagateDelay(MonoDelay.java:270) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:285) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.8.jar:3.7.8]
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T00:05:50.783+07:00  WARN 26453 --- [monitor-admin] [parallel-4] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=e4c4e2af6215, version=2, registration=Registration(name=STATISTIC-SERVICE, managementUrl=http://172.16.113.28:9082/actuator, healthUrl=http://172.16.113.28:9082/actuator/health, serviceUrl=http://172.16.113.28:9082, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T03:03:39.147768Z, info=Info(values={}), endpoints=Endpoints(endpoints={caches=Endpoint(id=caches, url=http://172.16.113.28:9082/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:9082/actuator/loggers), logfile=Endpoint(id=logfile, url=http://172.16.113.28:9082/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:9082/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:9082/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:9082/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:9082/actuator/serviceregistry), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:9082/actuator/heapdump), features=Endpoint(id=features, url=http://172.16.113.28:9082/actuator/features), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:9082/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:9082/actuator/mappings), beans=Endpoint(id=beans, url=http://172.16.113.28:9082/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:9082/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:9082/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:9082/actuator/sbom), metrics=Endpoint(id=metrics, url=http://172.16.113.28:9082/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:9082/actuator/conditions), info=Endpoint(id=info, url=http://172.16.113.28:9082/actuator/info)}), buildVersion=null, tags=Tags(values={}))
+
+java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 10000ms in 'peek' (and no fallback has been configured)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:281) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:420) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.propagateDelay(MonoDelay.java:270) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:285) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.8.jar:3.7.8]
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T00:05:50.783+07:00  WARN 26453 --- [monitor-admin] [parallel-3] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=7d4a8d0c72a6, version=2, registration=Registration(name=CLIENT-REGISTER-SERVICE, managementUrl=http://172.16.113.28:9084/actuator, healthUrl=http://172.16.113.28:9084/actuator/health, serviceUrl=http://172.16.113.28:9084, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T03:03:39.142870Z, info=Info(values={}), endpoints=Endpoints(endpoints={ratelimiterevents=Endpoint(id=ratelimiterevents, url=http://172.16.113.28:9084/actuator/ratelimiterevents), caches=Endpoint(id=caches, url=http://172.16.113.28:9084/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:9084/actuator/loggers), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:9084/actuator/heapdump), circuitbreakers=Endpoint(id=circuitbreakers, url=http://172.16.113.28:9084/actuator/circuitbreakers), features=Endpoint(id=features, url=http://172.16.113.28:9084/actuator/features), timerevents=Endpoint(id=timerevents, url=http://172.16.113.28:9084/actuator/timerevents), timelimiterevents=Endpoint(id=timelimiterevents, url=http://172.16.113.28:9084/actuator/timelimiterevents), beans=Endpoint(id=beans, url=http://172.16.113.28:9084/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:9084/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:9084/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:9084/actuator/sbom), ratelimiters=Endpoint(id=ratelimiters, url=http://172.16.113.28:9084/actuator/ratelimiters), info=Endpoint(id=info, url=http://172.16.113.28:9084/actuator/info), timers=Endpoint(id=timers, url=http://172.16.113.28:9084/actuator/timers), timelimiters=Endpoint(id=timelimiters, url=http://172.16.113.28:9084/actuator/timelimiters), circuitbreakerevents=Endpoint(id=circuitbreakerevents, url=http://172.16.113.28:9084/actuator/circuitbreakerevents), logfile=Endpoint(id=logfile, url=http://172.16.113.28:9084/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:9084/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:9084/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:9084/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:9084/actuator/serviceregistry), retries=Endpoint(id=retries, url=http://172.16.113.28:9084/actuator/retries), retryevents=Endpoint(id=retryevents, url=http://172.16.113.28:9084/actuator/retryevents), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:9084/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:9084/actuator/mappings), metrics=Endpoint(id=metrics, url=http://172.16.113.28:9084/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:9084/actuator/conditions)}), buildVersion=null, tags=Tags(values={}))
+
+java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 10000ms in 'peek' (and no fallback has been configured)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:281) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:420) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.propagateDelay(MonoDelay.java:270) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:285) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.8.jar:3.7.8]
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T00:05:50.783+07:00  WARN 26453 --- [monitor-admin] [parallel-1] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=31449754a75d, version=2, registration=Registration(name=GATEWAY-SERVICE, managementUrl=http://172.16.113.28:8080/actuator, healthUrl=http://172.16.113.28:8080/actuator/health, serviceUrl=http://172.16.113.28:8080, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T03:03:39.152719Z, info=Info(values={}), endpoints=Endpoints(endpoints={ratelimiterevents=Endpoint(id=ratelimiterevents, url=http://172.16.113.28:8080/actuator/ratelimiterevents), caches=Endpoint(id=caches, url=http://172.16.113.28:8080/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:8080/actuator/loggers), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:8080/actuator/heapdump), streamcircuitbreakerevents=Endpoint(id=streamcircuitbreakerevents, url=http://172.16.113.28:8080/actuator/streamcircuitbreakerevents), circuitbreakers=Endpoint(id=circuitbreakers, url=http://172.16.113.28:8080/actuator/circuitbreakers), features=Endpoint(id=features, url=http://172.16.113.28:8080/actuator/features), hystrixstreamcircuitbreakerevents=Endpoint(id=hystrixstreamcircuitbreakerevents, url=http://172.16.113.28:8080/actuator/hystrixstreamcircuitbreakerevents), timerevents=Endpoint(id=timerevents, url=http://172.16.113.28:8080/actuator/timerevents), timelimiterevents=Endpoint(id=timelimiterevents, url=http://172.16.113.28:8080/actuator/timelimiterevents), beans=Endpoint(id=beans, url=http://172.16.113.28:8080/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:8080/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:8080/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:8080/actuator/sbom), ratelimiters=Endpoint(id=ratelimiters, url=http://172.16.113.28:8080/actuator/ratelimiters), info=Endpoint(id=info, url=http://172.16.113.28:8080/actuator/info), timers=Endpoint(id=timers, url=http://172.16.113.28:8080/actuator/timers), timelimiters=Endpoint(id=timelimiters, url=http://172.16.113.28:8080/actuator/timelimiters), circuitbreakerevents=Endpoint(id=circuitbreakerevents, url=http://172.16.113.28:8080/actuator/circuitbreakerevents), logfile=Endpoint(id=logfile, url=http://172.16.113.28:8080/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:8080/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:8080/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:8080/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:8080/actuator/serviceregistry), retries=Endpoint(id=retries, url=http://172.16.113.28:8080/actuator/retries), retryevents=Endpoint(id=retryevents, url=http://172.16.113.28:8080/actuator/retryevents), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:8080/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:8080/actuator/mappings), bulkheadevents=Endpoint(id=bulkheadevents, url=http://172.16.113.28:8080/actuator/bulkheadevents), metrics=Endpoint(id=metrics, url=http://172.16.113.28:8080/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:8080/actuator/conditions), bulkheads=Endpoint(id=bulkheads, url=http://172.16.113.28:8080/actuator/bulkheads)}), buildVersion=null, tags=Tags(values={}))
+
+java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 10000ms in 'peek' (and no fallback has been configured)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:281) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:420) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.propagateDelay(MonoDelay.java:270) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:285) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.8.jar:3.7.8]
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T00:05:50.783+07:00  WARN 26453 --- [monitor-admin] [parallel-10] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=91b798e32387, version=2, registration=Registration(name=ACCOUNT-SERVICE, managementUrl=http://172.16.113.28:9081/actuator, healthUrl=http://172.16.113.28:9081/actuator/health, serviceUrl=http://172.16.113.28:9081, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T04:22:41.388860Z, info=Info(values={}), endpoints=Endpoints(endpoints={ratelimiterevents=Endpoint(id=ratelimiterevents, url=http://172.16.113.28:9081/actuator/ratelimiterevents), caches=Endpoint(id=caches, url=http://172.16.113.28:9081/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:9081/actuator/loggers), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:9081/actuator/heapdump), circuitbreakers=Endpoint(id=circuitbreakers, url=http://172.16.113.28:9081/actuator/circuitbreakers), features=Endpoint(id=features, url=http://172.16.113.28:9081/actuator/features), timerevents=Endpoint(id=timerevents, url=http://172.16.113.28:9081/actuator/timerevents), timelimiterevents=Endpoint(id=timelimiterevents, url=http://172.16.113.28:9081/actuator/timelimiterevents), beans=Endpoint(id=beans, url=http://172.16.113.28:9081/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:9081/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:9081/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:9081/actuator/sbom), ratelimiters=Endpoint(id=ratelimiters, url=http://172.16.113.28:9081/actuator/ratelimiters), info=Endpoint(id=info, url=http://172.16.113.28:9081/actuator/info), timers=Endpoint(id=timers, url=http://172.16.113.28:9081/actuator/timers), timelimiters=Endpoint(id=timelimiters, url=http://172.16.113.28:9081/actuator/timelimiters), circuitbreakerevents=Endpoint(id=circuitbreakerevents, url=http://172.16.113.28:9081/actuator/circuitbreakerevents), logfile=Endpoint(id=logfile, url=http://172.16.113.28:9081/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:9081/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:9081/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:9081/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:9081/actuator/serviceregistry), retries=Endpoint(id=retries, url=http://172.16.113.28:9081/actuator/retries), retryevents=Endpoint(id=retryevents, url=http://172.16.113.28:9081/actuator/retryevents), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:9081/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:9081/actuator/mappings), metrics=Endpoint(id=metrics, url=http://172.16.113.28:9081/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:9081/actuator/conditions)}), buildVersion=null, tags=Tags(values={}))
+
+java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 10000ms in 'peek' (and no fallback has been configured)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:281) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:420) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.propagateDelay(MonoDelay.java:270) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:285) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.8.jar:3.7.8]
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T00:16:07.509+07:00  WARN 28508 --- [account-service] [HikariPool-1 housekeeper] [account-service,,]com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m26s985ms).
+2025-09-01T00:18:12.164+07:00  WARN 26453 --- [monitor-admin] [DiscoveryClient-%d] [monitor-admin,,]c.netflix.discovery.TimedSupervisorTask  : task supervisor rejected the task
+
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@55abe12b[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@2d241f79[Wrapped task = com.netflix.discovery.DiscoveryClient$CacheRefreshThread@5b44eb5a]] rejected from java.util.concurrent.ThreadPoolExecutor@740d2583[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 406]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377) ~[na:na]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:124) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:63) ~[eureka-client-2.0.5.jar:2.0.5]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T01:08:12.504+07:00  WARN 28508 --- [account-service] [HikariPool-1 housekeeper] [account-service,,]com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52m4s995ms).
+2025-09-01T01:08:15.852+07:00  INFO 28508 --- [account-service] [DiscoveryClient-HeartbeatExecutor-%d] [account-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ACCOUNT-SERVICE/172.16.113.28:account-service:9081 - Re-registering apps/ACCOUNT-SERVICE
+2025-09-01T01:08:15.852+07:00  INFO 28508 --- [account-service] [DiscoveryClient-HeartbeatExecutor-%d] [account-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ACCOUNT-SERVICE/172.16.113.28:account-service:9081: registering service...
+2025-09-01T01:08:15.855+07:00  INFO 28508 --- [account-service] [DiscoveryClient-HeartbeatExecutor-%d] [account-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ACCOUNT-SERVICE/172.16.113.28:account-service:9081 - registration status: 204
+2025-09-01T01:08:17.773+07:00  INFO 26453 --- [monitor-admin] [DiscoveryClient-HeartbeatExecutor-%d] [monitor-admin,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MONITOR-ADMIN/172.16.113.28:monitor-admin:9000 - Re-registering apps/MONITOR-ADMIN
+2025-09-01T01:08:17.773+07:00  INFO 26453 --- [monitor-admin] [DiscoveryClient-HeartbeatExecutor-%d] [monitor-admin,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MONITOR-ADMIN/172.16.113.28:monitor-admin:9000: registering service...
+2025-09-01T01:08:17.777+07:00  INFO 26453 --- [monitor-admin] [DiscoveryClient-HeartbeatExecutor-%d] [monitor-admin,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MONITOR-ADMIN/172.16.113.28:monitor-admin:9000 - registration status: 204
+2025-09-01T01:08:24.447+07:00  WARN 26453 --- [monitor-admin] [parallel-8] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=7d4a8d0c72a6, version=2, registration=Registration(name=CLIENT-REGISTER-SERVICE, managementUrl=http://172.16.113.28:9084/actuator, healthUrl=http://172.16.113.28:9084/actuator/health, serviceUrl=http://172.16.113.28:9084, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T03:03:39.142870Z, info=Info(values={}), endpoints=Endpoints(endpoints={ratelimiterevents=Endpoint(id=ratelimiterevents, url=http://172.16.113.28:9084/actuator/ratelimiterevents), caches=Endpoint(id=caches, url=http://172.16.113.28:9084/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:9084/actuator/loggers), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:9084/actuator/heapdump), circuitbreakers=Endpoint(id=circuitbreakers, url=http://172.16.113.28:9084/actuator/circuitbreakers), features=Endpoint(id=features, url=http://172.16.113.28:9084/actuator/features), timerevents=Endpoint(id=timerevents, url=http://172.16.113.28:9084/actuator/timerevents), timelimiterevents=Endpoint(id=timelimiterevents, url=http://172.16.113.28:9084/actuator/timelimiterevents), beans=Endpoint(id=beans, url=http://172.16.113.28:9084/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:9084/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:9084/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:9084/actuator/sbom), ratelimiters=Endpoint(id=ratelimiters, url=http://172.16.113.28:9084/actuator/ratelimiters), info=Endpoint(id=info, url=http://172.16.113.28:9084/actuator/info), timers=Endpoint(id=timers, url=http://172.16.113.28:9084/actuator/timers), timelimiters=Endpoint(id=timelimiters, url=http://172.16.113.28:9084/actuator/timelimiters), circuitbreakerevents=Endpoint(id=circuitbreakerevents, url=http://172.16.113.28:9084/actuator/circuitbreakerevents), logfile=Endpoint(id=logfile, url=http://172.16.113.28:9084/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:9084/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:9084/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:9084/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:9084/actuator/serviceregistry), retries=Endpoint(id=retries, url=http://172.16.113.28:9084/actuator/retries), retryevents=Endpoint(id=retryevents, url=http://172.16.113.28:9084/actuator/retryevents), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:9084/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:9084/actuator/mappings), metrics=Endpoint(id=metrics, url=http://172.16.113.28:9084/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:9084/actuator/conditions)}), buildVersion=null, tags=Tags(values={}))
+
+java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 10000ms in 'peek' (and no fallback has been configured)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:281) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:420) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.propagateDelay(MonoDelay.java:270) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:285) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.8.jar:3.7.8]
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T01:08:24.447+07:00  WARN 26453 --- [monitor-admin] [parallel-6] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=31449754a75d, version=2, registration=Registration(name=GATEWAY-SERVICE, managementUrl=http://172.16.113.28:8080/actuator, healthUrl=http://172.16.113.28:8080/actuator/health, serviceUrl=http://172.16.113.28:8080, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T03:03:39.152719Z, info=Info(values={}), endpoints=Endpoints(endpoints={ratelimiterevents=Endpoint(id=ratelimiterevents, url=http://172.16.113.28:8080/actuator/ratelimiterevents), caches=Endpoint(id=caches, url=http://172.16.113.28:8080/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:8080/actuator/loggers), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:8080/actuator/heapdump), streamcircuitbreakerevents=Endpoint(id=streamcircuitbreakerevents, url=http://172.16.113.28:8080/actuator/streamcircuitbreakerevents), circuitbreakers=Endpoint(id=circuitbreakers, url=http://172.16.113.28:8080/actuator/circuitbreakers), features=Endpoint(id=features, url=http://172.16.113.28:8080/actuator/features), hystrixstreamcircuitbreakerevents=Endpoint(id=hystrixstreamcircuitbreakerevents, url=http://172.16.113.28:8080/actuator/hystrixstreamcircuitbreakerevents), timerevents=Endpoint(id=timerevents, url=http://172.16.113.28:8080/actuator/timerevents), timelimiterevents=Endpoint(id=timelimiterevents, url=http://172.16.113.28:8080/actuator/timelimiterevents), beans=Endpoint(id=beans, url=http://172.16.113.28:8080/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:8080/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:8080/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:8080/actuator/sbom), ratelimiters=Endpoint(id=ratelimiters, url=http://172.16.113.28:8080/actuator/ratelimiters), info=Endpoint(id=info, url=http://172.16.113.28:8080/actuator/info), timers=Endpoint(id=timers, url=http://172.16.113.28:8080/actuator/timers), timelimiters=Endpoint(id=timelimiters, url=http://172.16.113.28:8080/actuator/timelimiters), circuitbreakerevents=Endpoint(id=circuitbreakerevents, url=http://172.16.113.28:8080/actuator/circuitbreakerevents), logfile=Endpoint(id=logfile, url=http://172.16.113.28:8080/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:8080/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:8080/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:8080/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:8080/actuator/serviceregistry), retries=Endpoint(id=retries, url=http://172.16.113.28:8080/actuator/retries), retryevents=Endpoint(id=retryevents, url=http://172.16.113.28:8080/actuator/retryevents), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:8080/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:8080/actuator/mappings), bulkheadevents=Endpoint(id=bulkheadevents, url=http://172.16.113.28:8080/actuator/bulkheadevents), metrics=Endpoint(id=metrics, url=http://172.16.113.28:8080/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:8080/actuator/conditions), bulkheads=Endpoint(id=bulkheads, url=http://172.16.113.28:8080/actuator/bulkheads)}), buildVersion=null, tags=Tags(values={}))
+
+java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 10000ms in 'peek' (and no fallback has been configured)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:281) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:420) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.propagateDelay(MonoDelay.java:270) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:285) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.8.jar:3.7.8]
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T01:08:24.447+07:00  WARN 26453 --- [monitor-admin] [parallel-7] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=f2830481f89a, version=2, registration=Registration(name=AUTH-SERVICE, managementUrl=http://172.16.113.28:9008/actuator, healthUrl=http://172.16.113.28:9008/actuator/health, serviceUrl=http://172.16.113.28:9008, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T04:22:11.321833Z, info=Info(values={}), endpoints=Endpoints(endpoints={caches=Endpoint(id=caches, url=http://172.16.113.28:9008/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:9008/actuator/loggers), logfile=Endpoint(id=logfile, url=http://172.16.113.28:9008/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:9008/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:9008/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:9008/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:9008/actuator/serviceregistry), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:9008/actuator/heapdump), features=Endpoint(id=features, url=http://172.16.113.28:9008/actuator/features), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:9008/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:9008/actuator/mappings), beans=Endpoint(id=beans, url=http://172.16.113.28:9008/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:9008/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:9008/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:9008/actuator/sbom), metrics=Endpoint(id=metrics, url=http://172.16.113.28:9008/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:9008/actuator/conditions), info=Endpoint(id=info, url=http://172.16.113.28:9008/actuator/info)}), buildVersion=null, tags=Tags(values={}))
+
+java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 10000ms in 'peek' (and no fallback has been configured)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:281) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:420) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.propagateDelay(MonoDelay.java:270) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:285) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28) ~[reactor-core-3.7.8.jar:3.7.8]
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T01:14:08.581+07:00  WARN 26453 --- [monitor-admin] [reactor-http-nio-10] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=91b798e32387, version=2, registration=Registration(name=ACCOUNT-SERVICE, managementUrl=http://172.16.113.28:9081/actuator, healthUrl=http://172.16.113.28:9081/actuator/health, serviceUrl=http://172.16.113.28:9081, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T04:22:41.388860Z, info=Info(values={}), endpoints=Endpoints(endpoints={ratelimiterevents=Endpoint(id=ratelimiterevents, url=http://172.16.113.28:9081/actuator/ratelimiterevents), caches=Endpoint(id=caches, url=http://172.16.113.28:9081/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:9081/actuator/loggers), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:9081/actuator/heapdump), circuitbreakers=Endpoint(id=circuitbreakers, url=http://172.16.113.28:9081/actuator/circuitbreakers), features=Endpoint(id=features, url=http://172.16.113.28:9081/actuator/features), timerevents=Endpoint(id=timerevents, url=http://172.16.113.28:9081/actuator/timerevents), timelimiterevents=Endpoint(id=timelimiterevents, url=http://172.16.113.28:9081/actuator/timelimiterevents), beans=Endpoint(id=beans, url=http://172.16.113.28:9081/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:9081/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:9081/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:9081/actuator/sbom), ratelimiters=Endpoint(id=ratelimiters, url=http://172.16.113.28:9081/actuator/ratelimiters), info=Endpoint(id=info, url=http://172.16.113.28:9081/actuator/info), timers=Endpoint(id=timers, url=http://172.16.113.28:9081/actuator/timers), timelimiters=Endpoint(id=timelimiters, url=http://172.16.113.28:9081/actuator/timelimiters), circuitbreakerevents=Endpoint(id=circuitbreakerevents, url=http://172.16.113.28:9081/actuator/circuitbreakerevents), logfile=Endpoint(id=logfile, url=http://172.16.113.28:9081/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:9081/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:9081/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:9081/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:9081/actuator/serviceregistry), retries=Endpoint(id=retries, url=http://172.16.113.28:9081/actuator/retries), retryevents=Endpoint(id=retryevents, url=http://172.16.113.28:9081/actuator/retryevents), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:9081/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:9081/actuator/mappings), metrics=Endpoint(id=metrics, url=http://172.16.113.28:9081/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:9081/actuator/conditions)}), buildVersion=null, tags=Tags(values={}))
+
+org.springframework.web.reactive.function.client.WebClientRequestException: connection timed out after 30000 ms: /172.16.113.28:9081
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.9.jar:6.2.9]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.9.jar:6.2.9]
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:229) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:279) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1742) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:196) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect$ClientTransportSubscriber.onError(HttpClientConnect.java:325) ~[reactor-netty-http-1.2.8.jar:1.2.8]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onError(DefaultPooledConnectionProvider.java:174) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.internal.shaded.reactor.pool.AbstractPool$Borrower.fail(AbstractPool.java:479) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.internal.shaded.reactor.pool.SimpleDequePool.lambda$drainLoop$9(SimpleDequePool.java:443) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onError(FluxDoOnEach.java:186) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnectionAllocator$PooledConnectionInitializer.onError(DefaultPooledConnectionProvider.java:593) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:241) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:315) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.tryFailure(TransportConnector.java:600) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.setFailure(TransportConnector.java:546) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.transport.TransportConnector.lambda$doConnect$7(TransportConnector.java:262) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:603) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:596) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:572) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:505) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:649) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:642) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:131) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:264) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:156) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+Caused by: io.netty.channel.ConnectTimeoutException: connection timed out after 30000 ms: /172.16.113.28:9081
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:263) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:156) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T01:14:08.581+07:00  WARN 26453 --- [monitor-admin] [reactor-http-nio-4] [monitor-admin,,]d.c.b.admin.server.services.InfoUpdater  : Couldn't retrieve info for Instance(id=e4c4e2af6215, version=2, registration=Registration(name=STATISTIC-SERVICE, managementUrl=http://172.16.113.28:9082/actuator, healthUrl=http://172.16.113.28:9082/actuator/health, serviceUrl=http://172.16.113.28:9082, source=discovery), registered=true, statusInfo=StatusInfo(status=UP, details={}), statusTimestamp=2025-08-29T03:03:39.147768Z, info=Info(values={}), endpoints=Endpoints(endpoints={caches=Endpoint(id=caches, url=http://172.16.113.28:9082/actuator/caches), loggers=Endpoint(id=loggers, url=http://172.16.113.28:9082/actuator/loggers), logfile=Endpoint(id=logfile, url=http://172.16.113.28:9082/actuator/logfile), health=Endpoint(id=health, url=http://172.16.113.28:9082/actuator/health), refresh=Endpoint(id=refresh, url=http://172.16.113.28:9082/actuator/refresh), env=Endpoint(id=env, url=http://172.16.113.28:9082/actuator/env), serviceregistry=Endpoint(id=serviceregistry, url=http://172.16.113.28:9082/actuator/serviceregistry), heapdump=Endpoint(id=heapdump, url=http://172.16.113.28:9082/actuator/heapdump), features=Endpoint(id=features, url=http://172.16.113.28:9082/actuator/features), scheduledtasks=Endpoint(id=scheduledtasks, url=http://172.16.113.28:9082/actuator/scheduledtasks), mappings=Endpoint(id=mappings, url=http://172.16.113.28:9082/actuator/mappings), beans=Endpoint(id=beans, url=http://172.16.113.28:9082/actuator/beans), configprops=Endpoint(id=configprops, url=http://172.16.113.28:9082/actuator/configprops), threaddump=Endpoint(id=threaddump, url=http://172.16.113.28:9082/actuator/threaddump), sbom=Endpoint(id=sbom, url=http://172.16.113.28:9082/actuator/sbom), metrics=Endpoint(id=metrics, url=http://172.16.113.28:9082/actuator/metrics), conditions=Endpoint(id=conditions, url=http://172.16.113.28:9082/actuator/conditions), info=Endpoint(id=info, url=http://172.16.113.28:9082/actuator/info)}), buildVersion=null, tags=Tags(values={}))
+
+org.springframework.web.reactive.function.client.WebClientRequestException: connection timed out after 30000 ms: /172.16.113.28:9082
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.9.jar:6.2.9]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET info [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.9.jar:6.2.9]
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:229) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:279) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1742) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:196) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect$ClientTransportSubscriber.onError(HttpClientConnect.java:325) ~[reactor-netty-http-1.2.8.jar:1.2.8]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onError(DefaultPooledConnectionProvider.java:174) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.internal.shaded.reactor.pool.AbstractPool$Borrower.fail(AbstractPool.java:479) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.internal.shaded.reactor.pool.SimpleDequePool.lambda$drainLoop$9(SimpleDequePool.java:443) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onError(FluxDoOnEach.java:186) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnectionAllocator$PooledConnectionInitializer.onError(DefaultPooledConnectionProvider.java:593) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:241) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:315) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.tryFailure(TransportConnector.java:600) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.setFailure(TransportConnector.java:546) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.transport.TransportConnector.lambda$doConnect$7(TransportConnector.java:262) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:603) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:596) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:572) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:505) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:649) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:642) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:131) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:264) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:156) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+Caused by: io.netty.channel.ConnectTimeoutException: connection timed out after 30000 ms: /172.16.113.28:9082
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:263) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:156) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-09-01T01:14:09.235+07:00  WARN 28508 --- [account-service] [HikariPool-1 housekeeper] [account-service,,]com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m56s731ms).
+2025-09-01T01:30:17.605+07:00  WARN 26453 --- [monitor-admin] [DiscoveryClient-%d] [monitor-admin,,]c.netflix.discovery.TimedSupervisorTask  : task supervisor rejected the task
+
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@34e8bde1[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@39baa278[Wrapped task = com.netflix.discovery.DiscoveryClient$CacheRefreshThread@5b44eb5a]] rejected from java.util.concurrent.ThreadPoolExecutor@740d2583[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 406]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2082) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:841) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1377) ~[na:na]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:124) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:63) ~[eureka-client-2.0.5.jar:2.0.5]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
