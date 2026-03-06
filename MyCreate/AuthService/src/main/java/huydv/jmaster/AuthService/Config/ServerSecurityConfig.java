@@ -63,6 +63,12 @@ public class ServerSecurityConfig {
         auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
 
+    /**
+     * filter cho OAuth2
+     * @param http
+     * @return
+     * @throws Exception
+     */
     @Bean
     @Order(1)
     public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http) throws Exception{
@@ -80,6 +86,12 @@ public class ServerSecurityConfig {
         return http.formLogin(Customizer.withDefaults()).build();
     }
 
+    /**
+     * filter cho spring security
+     * @param http
+     * @return
+     * @throws Exception
+     */
     @Bean
     @Order(2)
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception{
@@ -125,7 +137,7 @@ public class ServerSecurityConfig {
                         .requireAuthorizationConsent(true)
                         .build())
                 .tokenSettings(TokenSettings.builder()
-                        .accessTokenTimeToLive(Duration.ofMinutes(10))
+                        .accessTokenTimeToLive(Duration.ofMinutes(50))
                         .refreshTokenTimeToLive(Duration.ofMinutes(3600)).build())
                 .build();
 
@@ -134,7 +146,7 @@ public class ServerSecurityConfig {
                 .clientSecret(passwordEncoder().encode("123"))
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
                 .scope("log").scope("notification")
-                .tokenSettings(TokenSettings.builder().accessTokenTimeToLive(Duration.ofMinutes(5)).build())
+                .tokenSettings(TokenSettings.builder().accessTokenTimeToLive(Duration.ofMinutes(50)).build())
                 .build();
 
         RegisteredClient registrarClient = RegisteredClient.withId("registrar-client")
@@ -144,7 +156,7 @@ public class ServerSecurityConfig {
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
                 .scope("client.create")
                 .scope("client.read")
-                .tokenSettings(TokenSettings.builder().accessTokenTimeToLive(Duration.ofMinutes(5)).build())
+                .tokenSettings(TokenSettings.builder().accessTokenTimeToLive(Duration.ofMinutes(50)).build())
                 .build();
 
 //        return new InMemoryRegisteredClientRepository(huydv, accountService);

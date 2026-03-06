@@ -50,7 +50,7 @@ public class AccountController {
         return accountDTO;
     }
 
-    @PreAuthorize("hasAuthority('ROLE_ADMIN') && hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('SCOPE_read') && hasRole('ADMIN')")
     @PostMapping("/account")
     @Transactional
     public AccountDTO createAccount(@RequestBody AccountDTO accountDTO, @RequestHeader("Authorization") String token) {

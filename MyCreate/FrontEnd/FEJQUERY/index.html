@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome to JMaster.io Front End</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <img src="https://jmaster.io/jmaster-logo.png" height="50" />
+  <h1>Welcome to JMaster.io Front End - SPRING CLOUD </h1>
+
+  <a href="#" id="login-btn">Please Click Here to Login</a>
+
+  <div id="content">
+    <button id="list-account-btn">Get All Accounts</button>
+    <button id="logout-btn">Logout</button>
+
+    <div id="accounts"></div>
+    <p id="token"></p>
+  </div>
+
+  <script>
+    var clientId = "huydv";
+    var clientSecret = "123";
+    var scope = "read write";
+    var callbackURI = "http://127.0.0.1:5500";
+
+    var authURL = 'http://127.0.0.1:9008/oauth2/authorize?client_id=' + clientId + '&scope=' + scope + '&redirect_uri=' + callbackURI + '&response_type=code';
+
+    $(document).ready(function () {
+      $("#login-btn").attr("href", encodeURI(authURL));
+      $("#list-account-btn").click(getAccounts);
+      $("#logout-btn").click(logout);
+
+      checkToken();
+    });
+
+    var checkToken = function () {
+      var token = localStorage.getItem("token");
+
+      if (token) {
+        $("#login-btn").css("display", "none");
+        $("#content").css("display", "block");
+
+        $("#token").html(token);
+
+      } else {
+        $("#content").css("display", "none");
+        $("#login-btn").css("display", "block");
+
+        let authorizationCode = getUrlParameter("code");
+        if (authorizationCode) {
+          getAccessToken(authorizationCode);
+        }
+      }
+    };
+
+    var getAccessToken = function (code) {
+      console.log("Authorization : ", "Basic " + btoa(clientId + ":" + clientSecret));
+      var settings = {
+        "url": "http://127.0.0.1:9008/oauth2/token",
+        "method": "POST",
+        "headers": {
+          "Authorization": "Basic " + btoa(clientId + ":" + clientSecret)
+        },
+        data: {
+          grant_type: 'authorization_code',
+          code: code,
+          redirect_uri: callbackURI
+        },
+        contentType: 'application/x-www-form-urlencoded',
+      };
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        localStorage.setItem("token", JSON.stringify(response));
+        checkToken();
+      });
+    };
+
+    var getAccounts = function () {
+      var token = localStorage.getItem("token");
+      if (!token) return;
+
+      var accessToken = JSON.parse(token).access_token;
+
+      var settings = {
+        "url": "http://127.0.0.1:8080/user/accounts",
+        "method": "GET",
+        "headers": {
+          "Authorization": "Bearer " + accessToken,
+          "Content-Type": "application/json"
+        }
+      };
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        $("#accounts").html(JSON.stringify(response));
+      });
+    };
+
+    var logout = function () {
+      localStorage.removeItem("token");
+      window.location.replace(callbackURI);
+    };
+
+    var getUrlParameter = function (sParam) {
+      var sPageURL = window.location.search.substring(1);
+      var sURLVariables = sPageURL.split('&');
+      var sParameterName;
+      var i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        console.log("sParameterName", sParameterName);
+        console.log("sParam", sParam);
+        if (sParameterName[0] === sParam) {
+            console.log("decodeURIComponent(sParameterName[1])", decodeURIComponent(sParameterName[1]));
+          return typeof sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+      }
+      return false;
+    };
+  </script>
+
+</body>
+
+</html>

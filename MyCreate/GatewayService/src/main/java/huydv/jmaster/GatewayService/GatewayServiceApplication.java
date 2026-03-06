@@ -73,6 +73,10 @@ public class GatewayServiceApplication {
 						.filters(f->f.stripPrefix(1))
 						.uri("lb://notification-service")
 				)
+				.route("client-register-route", r -> r.path("/client-register/**")
+						.filters(f->f.stripPrefix(1))
+						.uri("lb://client-register-service")
+				)
 				// swagger ui
 				.route("openapi", r -> r.path("/v3/api-docs/**")
 						.filters(f->f.rewritePath("/v3/api-docs/(?<service>.*)", "/${service}/v3/api-docs"))
