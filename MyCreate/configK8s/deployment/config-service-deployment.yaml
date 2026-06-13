@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: config-service-deployment
+    labels:
+        app: config-service
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: config-service
+    template:
+        metadata:
+            labels:
+                app: config-service
+        spec:
+            containers:
+                - name: config-service
+                  image: config-service:v1
+                  imagePullPolicy: Never
+                  ports:
+                    - containerPort: 9088
+                  env:
+                    - name: SPRING_PROFILES_ACTIVE
+                      value: "dev"
+                    - name: CONFIG_SERVER_PORT
+                      value: "9088"
+                    - name: EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE
+                      value: "http://discovery-service:8761/eureka/"
+                    - name: ZIPKIN_ENDPOINT
+                      value: "http://zipkin:9411/api/v2/spans"
+                    - name: OAUTH2_ISSUER_URI
+                      value: "http://auth-service:9008"
+                    - name: OAUTH2_JWK_SET_URI
+                      value: "http://auth-service:9008/oauth2/jwks"
+
+                    - name: DB_USERNAME
+                      value: "root"
+                    - name: DB_PASSWORD
+                      value: "Anhhuyditu00"
+                    - name: DB_URL
+                      value: "jdbc:mysql://mysql-service:3306/springCloud?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
+
+                    - name: ACCOUNT_SERVICE_PORT
+                      value: "9081"

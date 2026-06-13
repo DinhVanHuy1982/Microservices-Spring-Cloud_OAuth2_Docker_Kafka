@@ -1,0 +1,47 @@
+services:
+  config-server:
+    build:
+      context: ./ConfigServer
+    image: config-service:1.0
+
+  discovery-service:
+    build:
+      context: ./DiscoveryService
+    image: discovery-service:1.0
+
+  gateway-service:
+    build:
+      context: ./GatewayService
+    image: gateway-service:1.0
+
+  auth-service:
+    build:
+      context: ./AuthService
+    image: auth-service:1.0
+
+  account-service:
+    build:
+      context: ./accountservice
+    image: account-service:1.0
+
+  client-register-service:
+    build:
+      context: ./ClientRegisterService
+    image: client-register-service:1.0
+
+  monitor-admin-service:
+    build:
+      context: ./MonitorAdmin
+    image: monitor-admin-service:1.0
+
+  notification-service:
+    build:
+      context: ./NotificationService
+    image: notification-service:1.0
+
+  statistics-service:
+    build:
+      context: ./statisticService
+    image: statistics-service:1.0
+
+# nén các images thành 1 file để đẩy lên server: docker save $(docker compose config --images) | gzip > microservices.tar.gz
