@@ -43,5 +43,5 @@ services:
     build:
       context: ./statisticService
     image: statistics-service:1.0
-
-# nén các images thành 1 file để đẩy lên server: docker save $(docker compose config --images) | gzip > microservices.tar.gz
+# Build các images: docker compose build
+# Nén các images thành 1 file để đẩy lên server: docker save $(docker compose config --images) | gzip > microservices.tar.gz
